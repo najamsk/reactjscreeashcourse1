@@ -23,6 +23,8 @@ function Todos(props) {
 // todos passed as attribute from parent/wrapping component. so we define it with
 // type:array and expecting it to be required.
 Todos.propTypes = {
-    todos: PropTypes.array.isRequired
+    todos: PropTypes.array.isRequired,
+    markComplete: PropTypes.func.isRequired,
+    delTodo: PropTypes.func.isRequired,
 }
 export default Todos;

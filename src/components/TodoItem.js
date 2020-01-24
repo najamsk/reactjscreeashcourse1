@@ -51,7 +51,10 @@ function TodoItem(props) {
 // todos passed as attribute from parent/wrapping component. so we define it with
 // type:array and expecting it to be required.
 TodoItem.propTypes = {
-    todo: PropTypes.object.isRequired
+    todo: PropTypes.object.isRequired,
+    markComplete: PropTypes.func.isRequired,
+    delTodo: PropTypes.func.isRequired,
+
 };
 
 const btnStyle = {
