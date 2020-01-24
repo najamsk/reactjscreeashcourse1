@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 //import logo from './logo.svg';
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Todos from  './components/Todos';
 import Header from  './components/layout/Header';
 import AddTodo from  './components/AddTodo';
@@ -19,7 +19,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10').then(res => this.setState({todos: res.data}))
+        axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10').then(res => this.setState({todos: res.data}));
     }
 
     //Toggle complete
@@ -40,7 +40,7 @@ class App extends Component {
         ;
         return id;
     };
-    
+
     addTodo = (title) => {
         const newTodo = {
             title,
@@ -66,19 +66,14 @@ class App extends Component {
                         <Route exact path="/" render={props => (
                             <React.Fragment>
                                 <AddTodo addTodo={this.addTodo}/>
-                                <Todos todos={this.state.todos} delTodo={this.delTodo} markComplete={this.markComplete} />       
+                                <Todos todos={this.state.todos} delTodo={this.delTodo} markComplete={this.markComplete} />
                             </React.Fragment>
-                        )}>
-
-                        </Route>
-                        <Route path='/about' component={About} />                        
-
-                        
+                        )}></Route>
+                        <Route path='/about' component={About} />
                     </div>
                     </div>
                 </Router>
-                
-        );
+);
     } 
 }
 export default App;
